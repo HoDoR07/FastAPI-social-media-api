@@ -1,6 +1,7 @@
-from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
+from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter, Request
 from sqlalchemy.orm import Session
 from .. import schemas, database, models, oauth2
+
 
 
 router = APIRouter(
@@ -10,12 +11,19 @@ router = APIRouter(
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
-def vote(
+async def vote(
+    request: Request,
     vote: schemas.Vote,
     db: Session = Depends(database.get_db),
     current_user: int = Depends(oauth2.get_current_user)
 ):
+    
+
+    body = await request.body()
+    print(body)
     post = db.query(models.Post).filter(models.Post.id == vote.post_id).first()
+
+    print(post)
 
     if not post:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
