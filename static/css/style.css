@@ -1,0 +1,327 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+:root {
+    color-scheme: dark;
+}
+
+html {
+    background: #0f1115;
+}
+
+body {
+    background: #0f1115;
+    color: #e8e8e8;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+
+/* =========================================
+   HEADER / NAVBAR
+========================================= */
+
+header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+header h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #66b3ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #9cccff;
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    width: 100%;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   FORMS
+========================================= */
+
+form {
+    background: #181b21;
+    border: 1px solid #2d323a;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+label {
+    color: #d8d8d8;
+    font-weight: 600;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #101216 !important;
+    color: #eeeeee !important;
+
+    border: 1px solid #3a404a !important;
+    border-radius: 8px !important;
+
+    padding: 12px !important;
+
+    margin-bottom: 15px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #66b3ff !important;
+    outline: none;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    background: #242932 !important;
+    color: #ffffff !important;
+
+    border: 1px solid #454c58 !important;
+    border-radius: 8px !important;
+
+    padding: 10px 18px !important;
+
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #333a46 !important;
+    border-color: #66b3ff !important;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+#logout-btn {
+    padding: 7px 14px !important;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MESSAGES
+========================================= */
+
+#login-message,
+#post-message {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   POSTS CONTAINER
+========================================= */
+
+#posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* =========================================
+   POST CARD
+========================================= */
+
+.post {
+    background: #181b21;
+
+    border: 1px solid #2d323a;
+    border-radius: 12px;
+
+    padding: 22px;
+
+    transition: 0.2s ease;
+}
+
+.post:hover {
+    border-color: #454c58;
+    transform: translateY(-2px);
+}
+
+.post h3 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.post p {
+    color: #c8c8c8;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   POST META
+========================================= */
+
+.post-meta {
+    color: #888f9b;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   VOTE BUTTONS
+========================================= */
+
+.vote-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.vote-container button {
+    min-width: 90px;
+}
+
+
+/* =========================================
+   DELETE / EDIT BUTTONS
+========================================= */
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+hr {
+    border: 0;
+    border-top: 1px solid #2d323a;
+    margin: 40px 0;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+
+    color: #777f8c;
+
+    border-top: 1px solid #2d323a;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+    color: #66b3ff;
+}
+
+a:hover {
+    color: #9cccff;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form {
+        padding: 18px;
+    }
+
+    .post {
+        padding: 18px;
+    }
+
+    .vote-container,
+    .post-actions {
+        flex-direction: column;
+    }
+
+    .vote-container button,
+    .post-actions button {
+        width: 100%;
+    }
+}
